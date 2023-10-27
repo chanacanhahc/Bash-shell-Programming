@@ -1,6 +1,6 @@
 #! /bin/bash
 echo -------------------------
-echo User name: chan
+echo User name: chochanhee
 echo Student Number: 12223568
 echo [ Menu ]
 echo 1. Get the data of the movie identified by a specific \'movie id\' from \'u.item\'
