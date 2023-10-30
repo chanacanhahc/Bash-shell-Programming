@@ -1,5 +1,5 @@
 #! /bin/bash
-echo -------------------------
+echo --------------------------
 echo User name: chochanhee
 echo Student Number: 12223568
 echo [ Menu ]
@@ -12,7 +12,7 @@ echo 6. Modify the format of \'release data\' in \'u.item\'
 echo 7. Get the data of movies rated by a specific \'user id\' from \'u.data\'
 echo 8. Get the average \'rating\' of movies rated by users with \'age\' between 20 and 29 and \'occupation\' as \'programmer\'
 echo 9. Exit
-echo --------------------------
+echo ---------------------------
 read -p "Enter your choice [1-9] " choice
 while true;
 do
@@ -68,10 +68,10 @@ do
   echo
   read -p "Please enter the 'user id'(1~943):" id
   echo
-  cat u.data | awk -v a=${id} '$1==a{print $0}'| sort -n -k2| awk  '{printf $2"|"}'| sed 's/|$//'
+  cat u.data | awk -v a=${id} '$1==a{print $2}'| sort -n| awk  '{printf $0"|"}'| sed 's/|$//'
   echo
   echo
-  val=$(cat u.data | awk -v a=${id} '$1==a{print $0}'| sort -n -k2| awk 'NR<=10 {print $2}')
+  val=$(cat u.data | awk -v a=${id} '$1==a{print $2}'| sort -n | awk 'NR<=10 {print $0}')
   for v in $val
   do
    cat u.item| awk -F\| -v a=$v '$1==a{print $1"|"$2}'
