@@ -61,7 +61,7 @@ do
   echo
   if [ $res = "y" ]
   then
-   sed -E  's/([0-9]{2})-([A-Z][a-z]{2})-([0-9]{4})/\3\2\1/g' u.item | awk 'NR>=1673'| sed -E 's/Jan/01/g'| sed -E 's/Feb/02/g'| sed -E 's/Mar/03/g'| sed -E 's/Sep/09/g'| sed -E 's/Oct/10/g' 
+   sed -E  's/([0-9]{2})-([A-Z][a-z]{2})-([0-9]{4})/\3\2\1/g' u.item | awk 'NR>=1673'| sed -E 's/([0-9]{4})(Jan)([0-9]{2})/\101\3/g'| sed -E 's/([0-9]{4})(Feb)([0-9]{2})/\102\3/g'| sed -E 's/([0-9]{4})(Mar)([0-9]{2})/\103\3/g'| sed -E 's/([0-9]{4})(Sep)([0-9]{2})/\109\3/g'| sed -E 's/([0-9]{4})(Oct)([0-9]{2})/\110\3/g' 
    echo
   fi
  elif (($choice == 7)); then
